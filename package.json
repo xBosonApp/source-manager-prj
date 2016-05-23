@@ -1,0 +1,32 @@
+{
+    "name": "source-manager-prj",
+    "version": "0.1.17",
+    "description": "管理源代码,本机代码服务器,允许npm命令更新",
+    "main": "index.js",
+    "scripts": {
+        "test": "node index.js local",
+        "start": "node index.js",
+        "local": "node index.js local",
+        "sinopia": "node index.js sinopia",
+        "install": "node install.js"
+    },
+    "author": "jym",
+    "license": "ISC",
+    "dependencies": {
+        "concat-stream": "1.0.0",
+        "configuration-lib": "^0.1.17",
+        "cookie": "^0.1.3",
+        "express": "^4.13.1",
+        "fstream-npm": "0.1.5",
+        "http-proxy": "0.10.3",
+        "logger-lib": "^0.1.27",
+        "mixer-lib": "^0.1.32",
+        "my-local-ip": "^1.0.0",
+        "shasum": "1.0.0",
+        "sinopia": "1.3.0",
+        "sinopia-auth-group-lib": "^0.1.0",
+        "tar-pack": "2.0.0"
+    },
+    "devDependencies": {
+    }
+}
