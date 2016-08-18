@@ -8,8 +8,7 @@
         "start": "node index.js",
         "local": "node index.js local",
         "sinopia": "node index.js sinopia",
-        "install": "node install.js",
-        "prepublish": "node -e \"require('ver--1')();\""
+        "install": "node install.js"
     },
     "author": "jym",
     "license": "ISC",
@@ -29,6 +28,5 @@
         "tar-pack": "2.0.0"
     },
     "devDependencies": {
-        "ver--1": "^0.1.13"
     }
 }
