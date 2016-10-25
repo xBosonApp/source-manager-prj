@@ -19,14 +19,29 @@ function onExit(err) {
 }
 
 
+function checkSecret(config) {
+  var sinopia = config.source_server.sinopia;
+  var change = true;
+  var updateTime = 12 * 60 * 60 * 1000;
+  
+  if (sinopia.secret) {
+    if (sinopia.secret_time > Date.now() - updateTime) 
+      change = false;
+  }
+
+  if (change) {
+    sinopia.secret = Crypto.pseudoRandomBytes(32).toString('hex');
+    sinopia.secret_time = Date.now();
+  }
+}
+
+
 function start_server() {
   var config = clib.load();
   var npm_server = null; 
   var type = process.argv[2] || config.source_server.type;
 
-  config.source_server.sinopia.secret = 
-        Crypto.pseudoRandomBytes(32).toString('hex');
-
+  checkSecret(config);
   clib.save(config);
 
 

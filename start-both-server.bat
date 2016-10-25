@@ -3,7 +3,7 @@
 echo.
 echo.
 echo.
-echo !!!!!!!!!!     此脚本必须用 ctrl+c 来终止, 否则 npm install 无法工作         !!!!!!!!!!!
+echo !!!!!!!!!! 此脚本必须用 ctrl+c 来终止, 否则 npm install 无法工作 !!!!!!!!!!!
 echo.
 echo encoding GBK
 echo.

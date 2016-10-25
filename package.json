@@ -1,6 +1,6 @@
 {
     "name": "source-manager-prj",
-    "version": "0.1.17",
+    "version": "0.1.18",
     "description": "管理源代码,本机代码服务器,允许npm命令更新",
     "main": "index.js",
     "scripts": {
