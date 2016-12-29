@@ -90,11 +90,23 @@ var _config = {
           "allow_access": "devuser libuser adminusr",
           "allow_publish": "devuser adminusr"
         },
+        "*.lib": {
+          "allow_access": "devuser libuser adminusr",
+          "allow_publish": "devuser adminusr"
+        },
         "*-prj": {
           "allow_access": "devuser adminusr",
           "allow_publish": "adminusr"
         },
+        "*.prj": {
+          "allow_access": "devuser adminusr",
+          "allow_publish": "adminusr"
+        },
         "*-mix": {
+          "allow_access": "devuser adminusr",
+          "allow_publish": "adminusr"
+        },
+        "*.mix": {
           "allow_access": "devuser adminusr",
           "allow_publish": "adminusr"
         },
