@@ -11,17 +11,16 @@ echo.
 set hostname=192.168.7.144
 
 
-rem 如果没有初始化过则安装
-rem call npm set registry https://registry.npmjs.org/ 
-rem call npm install
+:如果没有初始化过则安装
+:call npm set registry https://registry.npmjs.org/ 
+:call npm install
 
-rem echo 设置本地数据源
-rem call npm set registry http://%hostname%:6070/
+:echo 设置本地数据源
+:call npm set registry http://%hostname%:6070/
 
 echo 启动本地数据源
-start /B node index.js local
-node index.js sinopia
+node index.js both
 
 echo.
-rem echo 还原默认数据源
-rem call npm set registry https://registry.npmjs.org/ 
+:echo 还原默认数据源
+:call npm set registry https://registry.npmjs.org/ 

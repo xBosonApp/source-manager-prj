@@ -1,22 +1,11 @@
 var path   = require('path');
 var clib   = require('configuration-lib');
 var Crypto = require('crypto');
-var logger = require('logger-lib')('src');
+var logger = require('logger-lib');
 
 
-process.on('SIGBREAK', onExit);
-process.on('exit', onExit);
-process.on('uncaughtException', onExit);
+process.on('uncaughtException', logger.error);
 clib.wait_init(start_server);
-
-
-function onExit(err) {
-  if (err) {
-    logger.error(err);
-  }
-  logger.log('exit.');
-  process.exit(0);
-}
 
 
 function checkSecret(config) {
@@ -50,14 +39,18 @@ function start_server() {
       npm_server = require('./lib/for-sinopia.js');
     break;
 
+		case 'both':
+			require('./lib/for-sinopia.js')(config);
+		
     case 'local':
       npm_server = require('./lib/for-ns.js');
     break;
+		
 
     default:
       throw new Error('unknow server type ' + type);
   }
 
-  npm_server(config.source_server.port);
+  npm_server(config);
   logger.log('Npm server start...', type);
 }

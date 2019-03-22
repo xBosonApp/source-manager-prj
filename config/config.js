@@ -16,19 +16,18 @@ var _config = {
   source_server : {
 
     // 启动参数的优先级高于配置的优先级
-    // sinopia local
+    // `sinopia` | `local` | `both`
     type : 'sinopia',
-    port : 6070,
 
     local : {
       // 必须是正确的网络出口 IP
-      host        : '10.8.0.6', // 192.168.7.144
+      host        : 'localhost', // 192.168.7.144
       // 如果为 0 则使用全局配置
       port        : 6071,
       dir         :  path.normalize(__dirname + '/../../'),
       expire      : 60,
       // 当找不到模块时, 路由到另一个 npm server
-      parent_host : '192.168.7.21',
+      parent_host : 'localhost',
       parent_port : 6070
     },
 
@@ -40,6 +39,7 @@ var _config = {
       // 超级用户组, 在组中的用户可以进入管理画面
       admin_grp  : 'adminusr',
       max_body_size : '100mb',
+			port 			 : 6070,
 
       logs: [{
         type  : 'file', 
@@ -57,9 +57,8 @@ var _config = {
           "file": config_dir_base + "/users.json",
           "groups": {
             "adminusr" : [ 'yanming' ],
-            "devuser"  : [ 'yanming', 'lining', 'test_server', 'server21',
-                           '192.168.7.21', 'vm-jilianzhi', 'jilianzhi' ],
-            "libuser"  : [ 'liufengyuan' ]
+            "devuser"  : [ 'yanming' ],
+            "libuser"  : [ 'yanming' ]
           }
         }
       },
@@ -77,7 +76,7 @@ var _config = {
           url: "http://registry.npm.taobao.org/"
         },
         zr : {
-          url: 'http://192.168.7.144:6070/'
+          url: 'http://localhost:6070/'
         }
       },
 
